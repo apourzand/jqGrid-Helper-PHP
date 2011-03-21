@@ -413,8 +413,8 @@ class Grid
 		/**
 		 * This option controls what to do when an ajax operation is in progress.
 		 * 'disable' - disables the jqGrid progress indicator. This way you can use your own indicator.
-		 * 'enable' (default) - enables “Loading” message in the center of the grid.
-		 * 'block' - enables the “Loading” message and blocks all actions in the grid until the ajax request
+		 * 'enable' (default) - enables ï¿½Loadingï¿½ message in the center of the grid.
+		 * 'block' - enables the ï¿½Loadingï¿½ message and blocks all actions in the grid until the ajax request
 		 * is finished. Note that this disables paging, sorting and all actions on toolbar, if any.
 		 * @param string $loadUi disable / enable / block
 		 * @return Grid
@@ -630,7 +630,7 @@ class Grid
 		}
 
        /**
-		* Defines the type of request to make (“POST” or “GET”) (default: GET)
+		* Defines the type of request to make (ï¿½POSTï¿½ or ï¿½GETï¿½) (default: GET)
 		* @param string $requestType request type (post or get)
 		* @return Grid
 		*/
@@ -1024,8 +1024,8 @@ class Grid
        /**
 		* This option enabled the toolbar of the grid.  When we have two toolbars (can be set using setToolbarPosition)
 		* then two elements (div) are automatically created. The id of the top bar is constructed like
-		* “t_”+id of the grid and the bottom toolbar the id is “tb_”+id of the grid. In case when
-		* only one toolbar is created we have the id as “t_” + id of the grid, independent of where
+		* ï¿½t_ï¿½+id of the grid and the bottom toolbar the id is ï¿½tb_ï¿½+id of the grid. In case when
+		* only one toolbar is created we have the id as ï¿½t_ï¿½ + id of the grid, independent of where
 		* this toolbar is created (top or bottom). You can use jquery to add elements to the toolbars.
 		* @param boolean $toolbarBoolean indicating if toolbar is enabled
 		* @return Grid
@@ -1083,7 +1083,7 @@ class Grid
 		* If true, jqGrid displays the beginning and ending record number in the grid,
 		* out of the total number of records in the query.
 		* This information is shown in the pager bar (bottom right by default)in this format:
-		* “View X to Y out of Z”.
+		* ï¿½View X to Y out of Zï¿½.
 		* If this value is true, there are other parameters that can be adjusted,
 		* including 'emptyrecords' and 'recordtext'. (default: false)
 		* @param boolean $viewRecordsBoolean indicating if recordnumbers are shown in grid
@@ -1686,7 +1686,7 @@ class Grid
 	    if ($this->_searchToolbar == 'true' && $this->_searchClearButton && $this->_pager && $this->_searchClearButton == 'true')
 	    {
 			$Script .= "jQuery('#" . $this->_id . "').jqGrid('navGrid',\"#" . $this->_pager . "\",{edit:false,add:false,del:false,search:false,refresh:false}); ";
-			$Script .= "jQuery('#" . $this->_id . "').jqGrid('navButtonAdd',\"#" . $this->_pager . "\",{caption:\"Clear\",title:\"Clear Search\",buttonicon :'ui-icon-refresh', onClickButton:function(){mygrid[0].clearToolbar(); }}); ";
+			$Script .= "jQuery('#" . $this->_id . "').jqGrid('navButtonAdd',\"#" . $this->_pager . "\",{caption:\"Clear\",title:\"Clear Search\",buttonicon :'ui-icon-refresh', onClickButton:function(){jQuery('#" . $this->_id . "')[0].clearToolbar(); }}); ";
 	    }
 
 	    // Search toolbar
